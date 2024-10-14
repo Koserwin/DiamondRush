@@ -6,7 +6,30 @@
         xmlns:local="clr-namespace:BD"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
-    <Grid x:Name="hra">
+    <StackPanel Orientation="Horizontal">
+        <Grid x:Name="hra">
         
-    </Grid>
+        </Grid>
+        <StackPanel Orientation="Vertical" Width="100">
+            <Button x:Name="level1_BTN"
+                    Width="80"
+                    Content="Level 1"
+                    Margin="0,0,0,20"
+                    Click="level1_BTN_Click"
+            />
+            <Button x:Name="level2_BTN"
+                Width="80"
+                Content="Level 2"
+                Margin="0,0,0,20"
+                Click="level2_BTN_Click"
+            />
+             <Button x:Name="level3_BTN"
+                Width="80"
+                Content="Level 3"
+                Margin="0,0,0,20"
+                Click="level3_BTN_Click"
+             />
+        </StackPanel>
+        
+    </StackPanel>
 </Window>
