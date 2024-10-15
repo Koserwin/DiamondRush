@@ -11,7 +11,7 @@ namespace BD
     {
         public Enemy(int s, int r) : base(s, r)
         {
-            ctverec.Fill = new SolidColorBrush(Colors.LightSkyBlue);
+            ctverec.Fill = new SolidColorBrush(Colors.Red);
         }
     }
 }
