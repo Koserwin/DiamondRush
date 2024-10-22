@@ -27,5 +27,7 @@ namespace BD
             Grid.SetColumn(ctverec, s);
             Grid.SetRow(ctverec, r);
         }
+
+        
     }
 }

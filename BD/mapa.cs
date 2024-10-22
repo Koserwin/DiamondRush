@@ -105,7 +105,7 @@ namespace BD
                             p = new Wall(r, s);
                             break;
                         case 'P':
-                            p = new Player(r, s);
+                            p = Player.GetHrac(r, s);
                             break;
                         case 'e':
                             p = new Enemy(r, s);
@@ -145,11 +145,23 @@ namespace BD
 
         internal static bool muzuVstoupit(int v1, int v2)
         {
-            if (mapicka[v1, v2].GetType() == null || mapicka[v1, v2].GetType() == typeof(Dirt) || mapicka[v1, v2].GetType() == typeof(Diamond) || mapicka[v1, v2].GetType() == typeof(Door) || mapicka[v1, v2].GetType() == typeof(Rock))
+            if (mapicka[v1, v2] == null || jeHlina(v1,v2) || mapicka[v1, v2].GetType() == typeof(Diamond) || mapicka[v1, v2].GetType() == typeof(Door) || mapicka[v1, v2].GetType() == typeof(Rock))
             {
                 return true;
             }
             else return false;
         }
+        internal static bool jeHlina(int v1, int v2)
+        {
+            if (mapicka[v1, v2].GetType() == typeof(Dirt))
+            {
+                (mapicka[v1, v2] as Dirt).Zmiz();
+                mapicka[v1, v2] = null;
+            }
+            else 
+                return false;
+            return true;
+        }
+
     }
 }

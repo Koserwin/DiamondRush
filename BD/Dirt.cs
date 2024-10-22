@@ -13,5 +13,9 @@ namespace BD
         {
             ctverec.Fill = new SolidColorBrush(Colors.Brown);
         }
+        internal void Zmiz()
+        {
+            Setup.plocha.Children.Remove(ctverec);
+        }
     }
 }

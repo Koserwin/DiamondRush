@@ -12,7 +12,7 @@ namespace BD
 {
     internal class Player : pohyblive
     {
-        public Player(int s, int r) : base(s, r)
+        private Player(int s, int r) : base(s, r)
         {
             ctverec.Fill = new SolidColorBrush(Colors.LightSkyBlue);
             Grid.SetZIndex(ctverec,250);
@@ -20,8 +20,21 @@ namespace BD
         }
 
 
-        public static Player Hrac { get; private set; }
+
+        private static Player Hrac;
        
+        public static Player GetHrac(int s, int r)
+        {
+            if (Hrac == null) 
+                Hrac = new Player(s, r);
+            return Hrac;
+        }
+        public static Player GetHrac()
+        {
+            if (Hrac == null)
+                Hrac = new Player(0, 0);
+            return Hrac;
+        }
 
         public void Move(int x, int y)
         {
@@ -33,6 +46,7 @@ namespace BD
             {
                 return;
             }
+            
 
             Grid.SetColumn(ctverec, sloupec+y);
             Grid.SetRow(ctverec, radek+x);

@@ -63,16 +63,16 @@ namespace BD
             switch (e.Key)
             {
                 case Key.Right:
-                    Player.Hrac.Move(0,1);
+                    Player.GetHrac().Move(0,1);
                     break;
                 case Key.Left:
-                    Player.Hrac.Move(0, -1);
+                    Player.GetHrac().Move(0, -1);
                     break;
                 case Key.Up:
-                    Player.Hrac.Move(-1, 0);
+                    Player.GetHrac().Move(-1, 0);
                     break;
                 case Key.Down:
-                    Player.Hrac.Move(1, 0);
+                    Player.GetHrac().Move(1, 0);
                     break;
             }
         }
